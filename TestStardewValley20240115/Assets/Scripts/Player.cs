@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
 
         
     }
-    /*测试修改代码*/
+    /*测试修改代码aaaa*/
     private void FixedUpdate()
     {
         float x = Input.GetAxisRaw("Horizontal");
