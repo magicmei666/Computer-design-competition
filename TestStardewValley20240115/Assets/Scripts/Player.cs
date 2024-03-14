@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
 
         
     }
-
+    /*²âÊÔĞŞ¸Ä´úÂë*/
     private void FixedUpdate()
     {
         float x = Input.GetAxisRaw("Horizontal");
