@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class ToolbarUI : MonoBehaviour
 {
+    private GameObject parentUI;
     public List<ToolbarSlotUI> slotuiList;
     private ToolbarSlotUI selectedSlotUI;//代表当前选择的
+
+    private void Awake()
+    {
+        parentUI = transform.Find("ParentUI").gameObject;
+        if (parentUI == null)
+        {
+            Debug.LogError("ParentUI not found. Make sure you have set the correct name.");
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +27,12 @@ public class ToolbarUI : MonoBehaviour
     {
         ToolbarSelectControl();
 
-        if(selectedSlotUI != null 
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            ToggleUI();
+        }
+
+        if (selectedSlotUI != null 
             && selectedSlotUI.GetData().item.type == ItemType.Hoe 
             && Input.GetKeyDown(KeyCode.Space))
         {
@@ -61,6 +76,18 @@ public class ToolbarUI : MonoBehaviour
                 selectedSlotUI = slotuiList[index];
                 selectedSlotUI.Highlight();
             }
+        }
+    }
+
+    private void ToggleUI()
+    {
+        if (parentUI != null)
+        {
+            parentUI.SetActive(!parentUI.activeSelf);
+        }
+        else
+        {
+            Debug.LogError("Attempted to toggle UI but parentUI is not set.");
         }
     }
 }

@@ -13,6 +13,17 @@ public class BackpackUI : MonoBehaviour
         parentUI = transform.Find("ParentUI").gameObject;
         //transform：这是对当前GameObject附加的Transform组件的引用。在Unity中，每个GameObject都有一个Transform组件，它负责处理对象的位置、旋转和缩放。
         //.Find("ParentUI")：这是Transform组件的一个方法，它在当前GameObject的所有直接子对象中搜索名为"ParentUI"的子对象。如果找到，它将返回该子对象的Transform组件。如果没有找到匹配的子对象，它将返回null。
+
+        //if (parentui == null)
+        //{
+        //    debug.logerror("parentui not found.");
+        //}
+        //else
+        //{
+        //    // 初始化时隐藏背包ui
+        //    parentui.setactive(false);
+        //}
+
     }
 
     private void Start()
@@ -49,6 +60,31 @@ public class BackpackUI : MonoBehaviour
         for (int i = 0; i < slotdataList.Count; i++) 
         {
             slotuiList[i].SetData(slotdataList[i]);
+        }
+
+        if (InventoryManager.Instance == null || InventoryManager.Instance.backpack == null)
+        {
+            Debug.LogError("InventoryManager or backpack is not initialized.");
+            return;
+        }
+
+        _ = InventoryManager.Instance.backpack.slotList;
+        if (slotdataList == null)
+        {
+            Debug.LogError("slotdataList is null.");
+            return;
+        }
+
+        for (int i = 0; i < slotdataList.Count; i++)
+        {
+            if (i < slotuiList.Count && slotuiList[i] != null)
+            {
+                slotuiList[i].SetData(slotdataList[i]);
+            }
+            else
+            {
+                Debug.LogError("slotuiList is not properly initialized or out of index.");
+            }
         }
     }
 

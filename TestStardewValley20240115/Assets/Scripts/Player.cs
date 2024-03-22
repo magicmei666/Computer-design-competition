@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     private float speed = 3;
 
     private Animator anim;
+    //private Sprite LiHui;
 
     private Vector2 direction = Vector2.zero;
 
