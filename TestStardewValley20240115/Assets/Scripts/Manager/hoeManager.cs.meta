@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a595ebdae319596459b5ab6133fee8d6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - interablemap: {instanceID: 0}
+  - tiletouming: {fileID: 11400000, guid: 64ed83e46650bf541beee22fe141d028, type: 2}
+  - chudied: {fileID: 11400000, guid: 67d5fa14ec6dbd8468f78f08cdea3766, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

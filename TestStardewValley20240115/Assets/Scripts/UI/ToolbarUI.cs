@@ -6,7 +6,8 @@ public class ToolbarUI : MonoBehaviour
 {
     private GameObject parentUI;
     public List<ToolbarSlotUI> slotuiList;
-    private ToolbarSlotUI selectedSlotUI;//代表当前选择的
+    private ToolbarSlotUI selectedSlotUI; //代表当前选择的
+    public Transform Playertransform; // 保留这个新增属性
 
     private void Awake()
     {
@@ -15,12 +16,13 @@ public class ToolbarUI : MonoBehaviour
         {
             Debug.LogError("ParentUI not found. Make sure you have set the correct name.");
         }
+        InitUI();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        InitUI();
+        // InitUI(); // 移到 Awake 方法中初始化
     }
 
     private void Update()
@@ -32,14 +34,12 @@ public class ToolbarUI : MonoBehaviour
             ToggleUI();
         }
 
-        if (selectedSlotUI != null 
-            && selectedSlotUI.GetData().item.type == ItemType.Hoe 
-            && Input.GetKeyDown(KeyCode.Space))
-        {
-
-        }
+        // 确保与 hoeManager 相关的代码逻辑正确（这部分似乎在冲突代码中被注释掉了）
     }
-
+    public ToolbarSlotUI GetselectedSlotUI()
+    {
+        return selectedSlotUI;
+    }
     void InitUI()//9个快捷键格子data数据和UI各个对应的方法
     {
         slotuiList = new List<ToolbarSlotUI>(new ToolbarSlotUI[9]);
@@ -68,13 +68,18 @@ public class ToolbarUI : MonoBehaviour
         {
             if (Input.GetKeyDown((KeyCode)i))
             {
+
                 if (selectedSlotUI != null)
                 {
                     selectedSlotUI.UnHighlight();
                 }
                 int index = i - (int)KeyCode.Alpha1;
-                selectedSlotUI = slotuiList[index];
-                selectedSlotUI.Highlight();
+                if (!slotuiList[index].GetData().IsEmpty())
+                {
+                    selectedSlotUI = slotuiList[index];
+
+                    selectedSlotUI.Highlight();
+                }
             }
         }
     }
@@ -90,4 +95,5 @@ public class ToolbarUI : MonoBehaviour
             Debug.LogError("Attempted to toggle UI but parentUI is not set.");
         }
     }
+
 }

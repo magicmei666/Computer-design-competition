@@ -24,11 +24,12 @@ public class DialogueUI : MonoBehaviour
 
     private void OnDialogueStarted(DialogueTree dlgTree)
     {
-        if (speakerImage == null)
-        {
-            Debug.LogError("SpeakerImage is not assigned on DialogueUI script.");
-            return;
-        }
+        //if (speakerImage == null)
+        //{
+        //    Debug.LogError("SpeakerImage is not assigned on DialogueUI script.");
+        //    return;
+        //}
+       
 
         // 只有当defaultImage不为null时才分配，否则记录一个错误
         if (defaultImage != null)

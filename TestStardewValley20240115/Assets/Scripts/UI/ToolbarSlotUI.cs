@@ -9,7 +9,7 @@ public class ToolbarSlotUI : SlotUI
     public Sprite slotDark;
 
     private Image image;
-
+    public Image GetImage() { return image; }
     private void Awake()
     {
         image = GetComponent<Image>();
