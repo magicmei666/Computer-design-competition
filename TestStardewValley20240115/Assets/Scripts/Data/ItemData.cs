@@ -17,4 +17,8 @@ public class ItemData : ScriptableObject
     public Sprite sprite;
     public GameObject prefab;
     public int maxCount = 1;
+    public bool IsNone()
+    {
+        return type == ItemType.None;
+    }
 }

@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("isWalking", false);
         }
-        if (toolbarui.GetselectedSlotUI()!= null
+        if (toolbarui.GetselectedSlotUI() != null
             && toolbarui.GetselectedSlotUI().GetData().item.type == ItemType.Hoe
             && Input.GetKeyDown(KeyCode.Space))
         {
