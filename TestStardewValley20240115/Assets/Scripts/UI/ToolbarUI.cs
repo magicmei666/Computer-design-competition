@@ -6,25 +6,28 @@ public class ToolbarUI : MonoBehaviour
 {
     public List<ToolbarSlotUI> slotuiList;
     private ToolbarSlotUI selectedSlotUI;//代表当前选择的
-
+    public Transform Playertransform;
     // Start is called before the first frame update
     void Start()
     {
         InitUI();
     }
-
     private void Update()
     {
         ToolbarSelectControl();
 
-        if(selectedSlotUI != null 
-            && selectedSlotUI.GetData().item.type == ItemType.Hoe 
-            && Input.GetKeyDown(KeyCode.Space))
-        {
+        //if (selectedSlotUI != null
+        //    && selectedSlotUI.GetData().item.type == ItemType.Hoe
+        //    && Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    hoeManager.Instance.Uptohoe(Playertransform.position);
 
-        }
+        //}
     }
-
+    public ToolbarSlotUI GetselectedSlotUI()
+    {
+        return selectedSlotUI;
+    }
     void InitUI()//9个快捷键格子data数据和UI各个对应的方法
     {
         slotuiList = new List<ToolbarSlotUI>(new ToolbarSlotUI[9]);

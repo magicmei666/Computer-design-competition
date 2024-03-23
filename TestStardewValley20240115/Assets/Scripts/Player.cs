@@ -6,11 +6,10 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     private float speed = 3;
-
+    public ToolbarUI toolbarui;
     private Animator anim;
 
     private Vector2 direction = Vector2.zero;
-
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -37,8 +36,14 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("isWalking", false);
         }
+        if (toolbarui.GetselectedSlotUI()!= null
+            && toolbarui.GetselectedSlotUI().GetData().item.type == ItemType.Hoe
+            && Input.GetKeyDown(KeyCode.Space))
+        {
+            hoeManager.Instance.Uptohoe(transform.position);
+            anim.SetTrigger("ishoe");
+        }
 
-        
     }
 
     private void FixedUpdate()
