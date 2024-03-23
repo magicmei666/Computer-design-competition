@@ -16,13 +16,13 @@ public class ToolbarUI : MonoBehaviour
         {
             Debug.LogError("ParentUI not found. Make sure you have set the correct name.");
         }
-        InitUI();
+        //InitUI();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        // InitUI(); // 移到 Awake 方法中初始化
+        InitUI(); // 移到 Awake 方法中初始化
     }
 
     private void Update()
