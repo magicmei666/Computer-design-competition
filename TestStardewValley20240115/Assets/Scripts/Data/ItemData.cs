@@ -7,7 +7,13 @@ public enum ItemType
     None,
     Seed_Carrot,
     Seed_Tomato,
-    Hoe
+    Hoe,
+    fence_left_down,
+    fence_right_down,
+    fence_left_up,
+    fence_right_up,
+    fence_hen,
+    fence_shu
 }
 
 [CreateAssetMenu()]
