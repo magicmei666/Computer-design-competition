@@ -1,0 +1,51 @@
+﻿        //二进制转化 该对象主要用于二进制转化操作(用于加密-可以)
+        BinaryFormatter formatter = new BinaryFormatter();
+        //使用file静态方法Create在game_Data文件夹下创建一个名为data的txt文件 并且将返回对象存入变量以便后续操作
+        FileStream file = File.Create(Application.persistentDataPath + "game_Data//data.txt");
+        //使用JsonUtility静态方法ToJson将类(Data)数据转换为Json格式并返回为一个字符串
+        var json = JsonUtility.ToJson(data);
+        //使用formatter实例方法Serialize(序列化)将json字符串导入file文件中
+        formatter.Serialize(file, json);
+        //关闭文件
+        file.Close();
+
+        //使用file静态方法Create在game_Data文件夹下创建一个名为data的txt文件 并且将返回对象存入变量以便后续操作
+        using (FileStream file = File.Create(savaGameDataPath + "game_Data//data.txt"))
+        {
+            //二进制转化 该对象主要用于二进制转化操作(用于加密,解密)
+            BinaryFormatter formatter = new BinaryFormatter();
+            //使用JsonUtility静态方法ToJson将类(Data)数据转换为Json格式并返回为一个字符串
+            var json = JsonUtility.ToJson(data);
+            //使用formatter实例方法Serialize(序列化)将json字符串导入file文件中
+            formatter.Serialize(file, json);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
