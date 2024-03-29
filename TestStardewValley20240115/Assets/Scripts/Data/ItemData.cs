@@ -8,12 +8,18 @@ public enum ItemType
     Seed_Carrot,
     Seed_Tomato,
     Hoe,
+    //围栏
     fence_left_down,
     fence_right_down,
     fence_left_up,
     fence_right_up,
     fence_hen,
-    fence_shu
+    fence_shu,
+    //粝米、稗米、绺米、御米
+    a_mi,
+    b_mi,
+    c_mi,
+    d_mi,
 }
 
 [CreateAssetMenu()]

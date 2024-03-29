@@ -4,16 +4,27 @@ using UnityEngine;
 
 public class ToolbarUI : MonoBehaviour
 {
-    public GameObject parentUI;
+    private GameObject parentUI;
     public List<ToolbarSlotUI> slotuiList;
-    private ToolbarSlotUI selectedSlotUI;//代表当前选择的
-    public Transform Playertransform;
+    private ToolbarSlotUI selectedSlotUI; //代表当前选择的
+    public Transform Playertransform; // 保留这个新增属性
+
+    private void Awake()
+    {
+        parentUI = transform.Find("ParentUI").gameObject;
+        if (parentUI == null)
+        {
+            Debug.LogError("ParentUI not found. Make sure you have set the correct name.");
+        }
+        //InitUI();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        parentUI = transform.Find("ParentUI").gameObject;
-        InitUI();
+        InitUI(); // 移到 Awake 方法中初始化
     }
+
     private void Update()
     {
         ToolbarSelectControl();
@@ -23,14 +34,7 @@ public class ToolbarUI : MonoBehaviour
             ToggleUI();
         }
 
-
-        //if (selectedSlotUI != null
-        //    && selectedSlotUI.GetData().item.type == ItemType.Hoe
-        //    && Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    hoeManager.Instance.Uptohoe(Playertransform.position);
-
-        //}
+        // 确保与 hoeManager 相关的代码逻辑正确（这部分似乎在冲突代码中被注释掉了）
     }
     public ToolbarSlotUI GetselectedSlotUI()
     {

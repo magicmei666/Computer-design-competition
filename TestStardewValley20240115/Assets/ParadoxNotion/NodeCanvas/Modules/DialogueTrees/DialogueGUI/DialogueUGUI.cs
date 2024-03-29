@@ -188,7 +188,8 @@ namespace NodeCanvas.DialogueTrees.UI.Examples
                 }
             }
 
-            if ( waitForInput ) {
+            if (waitForInput)
+            {
                 waitInputIndicator.gameObject.SetActive(true);
                 while (!Input.GetKeyDown(KeyCode.J))
                 {
@@ -196,6 +197,7 @@ namespace NodeCanvas.DialogueTrees.UI.Examples
                 }
                 waitInputIndicator.gameObject.SetActive(false);
             }
+
 
             yield return null;
             subtitlesGroup.gameObject.SetActive(false);

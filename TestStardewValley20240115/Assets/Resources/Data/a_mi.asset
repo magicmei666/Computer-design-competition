@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81a5620ebb9159643a9efed058c69153, type: 3}
-  m_Name: Fence_left_up
+  m_Name: a_mi
   m_EditorClassIdentifier: 
-  type: 6
-  sprite: {fileID: -1054438404, guid: 95f38f4caae808b48829d649cae922bc, type: 3}
-  prefab: {fileID: 6242010884958869940, guid: a7614355c094d18418be414308f7bd34, type: 3}
+  type: 10
+  sprite: {fileID: 5645167353134212895, guid: 6b5b7e3bcc073044ba83520390cae215, type: 3}
+  prefab: {fileID: 780719300399235322, guid: 099517bd8cb77d544bffee6d222bb109, type: 3}
   maxCount: 99

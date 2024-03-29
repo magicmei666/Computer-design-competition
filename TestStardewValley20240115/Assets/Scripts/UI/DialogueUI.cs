@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using NodeCanvas.DialogueTrees;
 
+[RequireComponent(typeof(Image))]
 public class DialogueUI : MonoBehaviour
 {
     public Image speakerImage; // 用于显示说话人头像的UI元素
@@ -11,6 +12,8 @@ public class DialogueUI : MonoBehaviour
     {
         DialogueTree.OnDialogueStarted += OnDialogueStarted;
         DialogueTree.OnSubtitlesRequest += OnSubtitlesRequest;
+
+        speakerImage = GetComponent<Image>();
     }
 
     private void OnDestroy()
