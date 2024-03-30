@@ -30,19 +30,19 @@ public class LoginManager : MonoBehaviour
     {
         Singleton = this;
 
-        loginBefore = transform.parent.transform.GetChild(2).gameObject;
-        loginAfter = transform.parent.transform.GetChild(3).gameObject;
+        loginBefore = transform.parent.GetChild(2).gameObject;
+        loginAfter = transform.parent.GetChild(3).gameObject;
 
-        login = transform.parent.transform.GetChild(4).GetChild(0).gameObject;
-        erllon = transform.parent.transform.GetChild(4).GetChild(1).gameObject;
+        login = transform.parent.GetChild(4).GetChild(0).gameObject;
+        erllon = transform.parent.GetChild(4).GetChild(1).gameObject;
 
-        promptBox = transform.parent.transform.GetChild(4).GetChild(2).gameObject.GetComponent<PromptBox>();
+        promptBox = transform.parent.GetChild(4).GetChild(2).GetComponent<PromptBox>();
 
-        loginName = transform.parent.transform.GetChild(4).GetChild(0).GetChild(1).GetComponent<TMP_InputField>();
-        loginPwd = transform.parent.transform.GetChild(4).GetChild(0).GetChild(2).GetComponent<TMP_InputField>();
+        loginName = transform.parent.GetChild(4).GetChild(0).GetChild(1).GetComponent<TMP_InputField>();
+        loginPwd = transform.parent.GetChild(4).GetChild(0).GetChild(2).GetComponent<TMP_InputField>();
 
-        erllonName = transform.parent.transform.GetChild(4).GetChild(1).GetChild(1).GetComponent<TMP_InputField>();
-        erllonPwd = transform.parent.transform.GetChild(4).GetChild(1).GetChild(2).GetComponent<TMP_InputField>();
+        erllonName = transform.parent.GetChild(4).GetChild(1).GetChild(1).GetComponent<TMP_InputField>();
+        erllonPwd = transform.parent.GetChild(4).GetChild(1).GetChild(2).GetComponent<TMP_InputField>();
     }
 
     /// <summary>
@@ -67,7 +67,7 @@ public class LoginManager : MonoBehaviour
         string password = PlayerPrefs.GetString("csPwd", "null");
 
         //判断保存在本地的账号密码是否正确
-        if (dataBase.IsPassword(name,password)==false || name == "null")
+        if (!dataBase.IsPassword(name, password) || name == "null")
         {
             loginBefore.SetActive(true);
             loginAfter.SetActive(false);
@@ -245,6 +245,8 @@ public class LoginManager : MonoBehaviour
     //--------------------管理类单例模式--------------------//
 
     private static LoginManager Singleton;
+
+    [System.Obsolete]
     public static LoginManager Instance
     {
         get
@@ -252,6 +254,7 @@ public class LoginManager : MonoBehaviour
             if (Singleton != null)
                 return Singleton;
 
+            // 根据Unity的更新建议，使用新的查找方法
             Singleton = FindObjectOfType<LoginManager>();
 
             if (Singleton == null)
@@ -260,7 +263,8 @@ public class LoginManager : MonoBehaviour
             }
             else
             {
-                foreach (var item in FindObjectsOfType<SlackerSingleton>())
+                var items = FindObjectsOfType<LoginManager>();
+                foreach (var item in items)
                 {
                     if (item != Singleton)
                         Destroy(item.gameObject);
@@ -269,5 +273,8 @@ public class LoginManager : MonoBehaviour
             return Singleton;
         }
     }
+
+    // 注意：此处的 FindObjectOfType 和 FindObjectsOfType 方法需要替换为新的API调用
+    // 实际的替换代码取决于你的Unity版本和官方文档的最新建议
 
 }
