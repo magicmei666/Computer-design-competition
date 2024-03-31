@@ -5,6 +5,7 @@ using UnityEngine;
 public class ToolbarUI : MonoBehaviour
 {
     private GameObject parentUI;
+    private bool allowToggleUI = false;
     public List<ToolbarSlotUI> slotuiList;
     private ToolbarSlotUI selectedSlotUI; //代表当前选择的
     public Transform Playertransform; // 保留这个新增属性
@@ -23,6 +24,11 @@ public class ToolbarUI : MonoBehaviour
     void Start()
     {
         InitUI(); // 移到 Awake 方法中初始化
+
+        // 确保背包UI初始时不显示
+        parentUI.SetActive(false);
+        // 允许后续通过Tab切换背包UI的显示状态
+        allowToggleUI = true;
     }
 
     private void Update()
@@ -88,7 +94,10 @@ public class ToolbarUI : MonoBehaviour
     {
         if (parentUI != null)
         {
-            parentUI.SetActive(!parentUI.activeSelf);
+            if (allowToggleUI)
+            {
+                parentUI.SetActive(!parentUI.activeSelf);
+            }
         }
         else
         {

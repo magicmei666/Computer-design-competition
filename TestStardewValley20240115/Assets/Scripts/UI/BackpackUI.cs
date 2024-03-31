@@ -6,6 +6,8 @@ public class BackpackUI : MonoBehaviour
 {
     private GameObject parentUI;
 
+    private bool allowToggleUI = false;
+
     public List<SlotUI> slotuiList;
 
     private void Awake()
@@ -29,6 +31,11 @@ public class BackpackUI : MonoBehaviour
     private void Start()
     {
         InitUI(); //写了这个之后，初始化成功
+
+        // 确保背包UI初始时不显示
+        parentUI.SetActive(false);
+        // 允许后续通过Tab切换背包UI的显示状态
+        allowToggleUI = true;
     }
 
     // Update is called once per frame
@@ -90,7 +97,10 @@ public class BackpackUI : MonoBehaviour
 
     private void ToggleUI()
     {
-        parentUI.SetActive(!parentUI.activeSelf);
+        if (allowToggleUI)
+        {
+            parentUI.SetActive(!parentUI.activeSelf);
+        }
     }
 
     public void OnCloseClick()
