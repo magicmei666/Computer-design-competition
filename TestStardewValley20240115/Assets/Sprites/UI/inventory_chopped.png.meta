@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e5a1ce72888fc744e9a628d97e39e73d
+guid: 8407b657bbd421b48a9017733e75ef73
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -476,7 +476,7 @@ TextureImporter:
       name: Bg_Right
       rect:
         serializedVersion: 2
-        x: 92
+        x: 91
         y: 130
         width: 192
         height: 77

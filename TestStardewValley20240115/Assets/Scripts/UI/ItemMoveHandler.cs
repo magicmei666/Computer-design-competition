@@ -31,20 +31,20 @@ public class ItemMoveHandler : MonoBehaviour
 
     private void Update()
     {
-        if(icon.enabled)
+        if (icon.enabled)
         {
             Vector2 position;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                GetComponent<RectTransform>(), 
+                GetComponent<RectTransform>(),
                 Input.mousePosition,
-                null, 
+                null,
                 out position);
             icon.GetComponent<RectTransform>().anchoredPosition = position;
         }
 
         if (Input.GetMouseButtonDown(0))
         {
-            if(EventSystem.current.IsPointerOverGameObject() == false)
+            if (EventSystem.current.IsPointerOverGameObject() == false)
             {
                 ThrowItem();
             }
@@ -69,7 +69,7 @@ public class ItemMoveHandler : MonoBehaviour
         print("OnClick:" + slotui);
         selectedSlotUI = slotui;
         //判断手上是否为空
-        if(selectedSlotData != null)
+        if (selectedSlotData != null)
         {
             //是否点击了空格子
             if (slotui.GetData().IsEmpty())
@@ -106,7 +106,7 @@ public class ItemMoveHandler : MonoBehaviour
     {
         icon.enabled = false;
     }
-     
+
     void ShowIcon(Sprite sprite)
     {
         //if (sprite == null)
@@ -140,7 +140,7 @@ public class ItemMoveHandler : MonoBehaviour
 
     private void ThrowItem()
     {
-        if(selectedSlotData != null)
+        if (selectedSlotData != null)
         {
             print("Throw");
             GameObject prefab = selectedSlotData.item.prefab;
@@ -158,7 +158,7 @@ public class ItemMoveHandler : MonoBehaviour
             ClearHand();
         }
     }
-    private void MoveToEmptySlot(SlotData fromData,SlotData toData)
+    private void MoveToEmptySlot(SlotData fromData, SlotData toData)
     {
         if (isCtrlDown)
         {
@@ -174,7 +174,7 @@ public class ItemMoveHandler : MonoBehaviour
     }
     private void MoveToNotEmptySlot(SlotData fromData, SlotData toData)
     {
-        if(isCtrlDown)
+        if (isCtrlDown)
         {
             if (toData.CanAddItem())
             {
@@ -185,7 +185,7 @@ public class ItemMoveHandler : MonoBehaviour
         else
         {
             int freespace = toData.GetFreeSpace();
-            if(fromData.count > freespace)
+            if (fromData.count > freespace)
             {
                 toData.Add(freespace);
                 fromData.Reduce(freespace);
@@ -203,7 +203,7 @@ public class ItemMoveHandler : MonoBehaviour
         ItemData item = data1.item;
         int count = data1.count;
         data1.MoveSlot(data2);
-        data2.AddItem(item,count);
+        data2.AddItem(item, count);
         ClearHandForced();
     }
 }
