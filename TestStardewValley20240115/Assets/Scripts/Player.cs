@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       // anim.SetTrigger("ishoe");
     }
 
     // Update is called once per frame
@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
             && Input.GetKeyDown(KeyCode.Space))
         {
             hoeManager.Instance.Uptohoe(transform.position);
+            print("hoeeeee");
             anim.SetTrigger("ishoe");
         }
    
