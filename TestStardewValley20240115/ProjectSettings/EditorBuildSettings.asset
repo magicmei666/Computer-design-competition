@@ -14,7 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WoShi.unity
     guid: 769b654ddeda0584f8b3232a65445fe3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/cs1.unity
     guid: d8336524b4aeb914bbf9817695c7cb41
+  - enabled: 1
+    path: Assets/Scenes/JiaZai.unity
+    guid: d64d0b332a4b21e438e25332792911e4
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

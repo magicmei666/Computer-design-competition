@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Backpack
   m_EditorClassIdentifier: 
   slotList:
-  - item: {fileID: 11400000, guid: ad91c182bcfad934ca760e3bc0c26c0c, type: 2}
-    count: 4
   - item: {fileID: 11400000, guid: 4dc5da7443a8a0847ae63563f1008f1e, type: 2}
-    count: 5
+    count: 1
   - item: {fileID: 11400000, guid: cc878f1cf8e392a438eca40dd3a4a2f6, type: 2}
+    count: 1
+  - item: {fileID: 11400000, guid: ad91c182bcfad934ca760e3bc0c26c0c, type: 2}
     count: 1
   - item: {fileID: 0}
     count: 0

@@ -6,6 +6,7 @@ using UnityEngine;
 [Serializable]
 public class SlotData 
 {
+    //这是物品槽类
     public ItemData item;
     public int count = 0;
 

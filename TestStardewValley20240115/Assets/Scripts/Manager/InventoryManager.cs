@@ -10,6 +10,7 @@ public class InventoryManager : MonoBehaviour
 
     public InventoryData backpack;//这个字段保存的数据
     public InventoryData toolbarData;
+    public InventoryData JiShi_SuMi;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class InventoryManager : MonoBehaviour
 
         backpack = Resources.Load<InventoryData>("Data/Backpack");//加载指定的
         toolbarData = Resources.Load<InventoryData>("Data/Toolbar");
+        JiShi_SuMi = Resources.Load<InventoryData>("Data/JiShi_SuMi");
     }
 
     private ItemData GetItemData(ItemType type)//通过物品类型，得到物品信息

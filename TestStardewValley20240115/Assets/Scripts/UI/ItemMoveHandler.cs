@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -205,5 +206,10 @@ public class ItemMoveHandler : MonoBehaviour
         data1.MoveSlot(data2);
         data2.AddItem(item, count);
         ClearHandForced();
+    }
+
+    internal void OnSlotClick(JiShiSlotUI jiShiSlotUI)
+    {
+        throw new NotImplementedException();
     }
 }

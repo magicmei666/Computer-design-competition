@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//这是物品类
+
 public enum ItemType
 {
     None,
