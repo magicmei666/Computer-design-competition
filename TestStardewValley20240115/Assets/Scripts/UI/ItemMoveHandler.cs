@@ -30,6 +30,20 @@ public class ItemMoveHandler : MonoBehaviour
         player = GameObject.FindAnyObjectByType<Player>();
     }
 
+    //private void Awake()
+    //{
+    //    Instance = this;
+    //    icon = GetComponentInChildren<Image>();
+    //    if (icon == null)
+    //    {
+    //        Debug.LogError("Awake: Icon Image component not found in children.");
+    //        return; // 如果 icon 未找到，终止执行以避免 NullReferenceException
+    //    }
+    //    HideIcon();
+    //    player = FindObjectOfType<Player>(); // 纠正了方法名
+    //}
+
+
     private void Update()
     {
         if (icon.enabled)

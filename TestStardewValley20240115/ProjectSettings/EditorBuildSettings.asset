@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Game chapter/chapter_1/Scenes/1_SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/ShiJi.unity
+    path: Assets/Game chapter/chapter_1/Scenes/1_ShiJi.unity
     guid: 25ff070bc45a451488bf57f20ec9efcb
   - enabled: 1
-    path: Assets/Scenes/WoShi.unity
+    path: Assets/Game chapter/chapter_1/Scenes/1_WoShi.unity
     guid: 769b654ddeda0584f8b3232a65445fe3
   - enabled: 0
     path: Assets/Scenes/cs1.unity
@@ -20,5 +20,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JiaZai.unity
     guid: d64d0b332a4b21e438e25332792911e4
+  - enabled: 1
+    path: Assets/Game chapter/chapter_1/Scenes/1_JiShiDiTu.unity
+    guid: 706865eb9e557e14b965fe6750cbfb44
+  - enabled: 1
+    path: Assets/Game chapter/chapter_1/Scenes/1_JiShiDiTu_After.unity
+    guid: 298109278142cc54a99abc5b33ac53f9
+  - enabled: 1
+    path: Assets/Game chapter/chapter_1/Scenes/1_SampleScene_After.unity
+    guid: de0418e174a174841ad303a6904f7295
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
