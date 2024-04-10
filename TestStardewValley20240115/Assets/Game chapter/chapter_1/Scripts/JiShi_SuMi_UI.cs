@@ -95,6 +95,38 @@ public class JiShi_SuMi_UI : MonoBehaviour
         }
     }
 
+    //public void UpdateUI()
+    //{
+    //    if (InventoryManager.Instance == null || InventoryManager.Instance.backpack == null)
+    //    {
+    //        Debug.LogError("InventoryManager or backpack is not initialized.");
+    //        return;
+    //    }
+
+    //    List<SlotData> slotdataList = InventoryManager.Instance.backpack.slotList;
+
+    //    if (slotdataList == null)
+    //    {
+    //        Debug.LogError("slotdataList is null.");
+    //        return;
+    //    }
+
+    //    int count = Mathf.Min(slotdataList.Count, JiShiSlotUIList.Count); // 使用较小的数量以避免超出索引范围
+
+    //    for (int i = 0; i < count; i++)
+    //    {
+    //        if (JiShiSlotUIList[i] != null) // 确保不会尝试设置 null 对象的数据
+    //        {
+    //            JiShiSlotUIList[i].SetData(slotdataList[i]);
+    //        }
+    //        else
+    //        {
+    //            Debug.LogError($"JiShiSlotUIList element at index {i} is null.");
+    //        }
+    //    }
+    //}
+
+
     //public void UpdateUI() // 更新所有UI的方法
     //{
     //    List<SlotData> slotdataList = InventoryManager.Instance.backpack.slotList;
