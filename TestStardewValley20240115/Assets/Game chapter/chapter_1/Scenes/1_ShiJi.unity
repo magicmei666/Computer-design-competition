@@ -791,7 +791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: zhujue
-  _portrait: {fileID: 2800000, guid: 43bb75f4afdf6f2468ede59474116467, type: 3}
+  _portrait: {fileID: 2800000, guid: 3272cd1829c771a4eb42673de9fbe346, type: 3}
   _dialogueColor: {r: 1, g: 1, b: 1, a: 1}
   _dialogueOffset: {x: 0, y: 0, z: 0}
 --- !u!222 &96795724

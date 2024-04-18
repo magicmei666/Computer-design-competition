@@ -7889,7 +7889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: zhujue
-  _portrait: {fileID: 2800000, guid: 43bb75f4afdf6f2468ede59474116467, type: 3}
+  _portrait: {fileID: 2800000, guid: 3272cd1829c771a4eb42673de9fbe346, type: 3}
   _dialogueColor: {r: 1, g: 1, b: 1, a: 1}
   _dialogueOffset: {x: 0, y: 0, z: 0}
 --- !u!222 &943850475
@@ -8426,7 +8426,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128822889}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a81484fa08cb1c4681fc2c16ab6a327, type: 3}
   m_Name: 
@@ -15396,6 +15396,7 @@ GameObject:
   - component: {fileID: 2020334319}
   - component: {fileID: 2020334318}
   - component: {fileID: 2020334317}
+  - component: {fileID: 2020334321}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -15410,7 +15411,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020334316}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 164726ebe1cb1bb4eb85d1cd7bbf0680, type: 3}
   m_Name: 
@@ -15490,6 +15491,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2020334321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020334316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971cc8329d6302045b9d40690d6648e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1585202008}
+  mapRenderer: {fileID: 2092031680}
 --- !u!1001 &2034258236
 PrefabInstance:
   m_ObjectHideFlags: 0
